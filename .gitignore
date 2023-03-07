@@ -1,6 +1,7 @@
 # Custom
 log/
 logs/
+data/
 
 
 # Byte-compiled / optimized / DLL files

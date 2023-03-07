@@ -23,11 +23,15 @@ build-no-cache:
 
 reup: down up
 
-clean: clean-logs clean-container
+clean: clean-logs clean-container clean-package
 
 clean-logs:
-	rm -rf log/*.log
+	rm -rf logs/*
 
 clean-container:
 	docker compose down --rmi all
-	sudo rm -rf app/__pycache__
+
+clean-package:
+	rm -rf build *.egg-info
+	find . -name '__pycache__' | xargs rm -rf
+
